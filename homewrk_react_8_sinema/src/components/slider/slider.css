@@ -1,0 +1,69 @@
+.carousel{
+    /* width: 80%;
+    margin: 0 auto; */
+
+}
+.carousel__item{
+    /* width: 40%; */
+    /* max-height: 100vh; */
+    cursor: pointer;
+    /* width: 100%; */
+    /* height: 200px; */
+    /* border-style: solid; */
+
+    /* overflow: hidden; */
+    /* object-fit: contain;
+    object-position: 0 50%; */
+    /* object-position:bottom; */
+    /* filter: brightness(0.3); */
+
+}
+.carousel__item-img{
+    max-height: 100vh;
+    object-fit: cover;
+    object-position: 0 30%;
+    filter: brightness(0.35);
+}
+
+.carousel__info{
+    /* color:rgb(251, 255, 5); section-movies
+    color: black; */
+    color: #fcf6f6;
+    width: 70%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    left: 5%;
+    /* background-color: aqua; */
+}
+
+.carousel__info-title{
+    font-family: 'Roboto',sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+
+.carousel__info-text{
+    font-size: 2.8rem;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 2%;
+    text-align: start;
+}
+
+.carousel__info-rating{
+    font-size: 3.2rem;
+  
+    display: flex;
+
+    align-items: center;
+    /* justify-content: center; */
+}
+.carousel__info-rating img{
+    width: 3.3rem;
+    margin-right: .5rem;
+}

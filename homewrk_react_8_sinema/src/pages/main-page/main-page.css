@@ -1,0 +1,7 @@
+.main-page{
+    max-width: 144rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #050E12;
+    color: #ffffff;
+}
