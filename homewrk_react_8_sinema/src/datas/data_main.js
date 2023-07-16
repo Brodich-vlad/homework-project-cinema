@@ -1,7 +1,7 @@
 
 // https://image.tmdb.org/t/p/w500/
 
-// https://image.tmdb.org/t/p/w500/eMPxmNvJjxVZIQWI2t1VmNC5IuR.jpg
+// https://image.tmdb.org/t/p/w500/qWQSnedj0LCUjWNp9fLcMtfgadp.jpg
 
 
 export const data_main = [

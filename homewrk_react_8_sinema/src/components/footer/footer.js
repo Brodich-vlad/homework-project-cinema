@@ -6,7 +6,7 @@ export default function Footer(){
             <div className={classes.footer__wrapper} >
                 <p  className={classes.footer__logo} >
                     VIV
-                    <span className={classes.footer__logo_a}> a </span>
+                    <span className={classes.footer__logo_a}>a </span>
                     Cinema
                     <span className={classes.footer__date}> 16.07.2023 </span>
                 </p>

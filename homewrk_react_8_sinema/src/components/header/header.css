@@ -1,7 +1,7 @@
 .header{
     background: #1A1F38;
     color: white;
-    padding: .5rem;
+    padding: .6rem;
 }
 .header__wrapper{
     width: 90%;
@@ -10,16 +10,11 @@
     justify-content: space-between;
     align-items: center;
 }
-.logo{
-    font-family: 'Inter',sans-serif;
-    font-size: 4.8rem;
-    font-weight: 500;
-}
+
 .header__title{
     font-family: 'Kalam', cursive;
     font-size: 4.8rem;
     font-weight: 500;
-    /* position: relative; */
     cursor: pointer;
 }
 
@@ -48,6 +43,9 @@
 
 .header__search{
     width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     /* font-size: 2.5rem; */
     background: #C4C4C4;
     
@@ -55,9 +53,19 @@
     padding: .5rem;
 }
 .header__search_input{
-    font-size: 2rem;
+    width: 85%;
+    font-size: 1.5rem;
     border: none;
     background: none;
     border-radius: .8rem;
     padding: 1rem;
+}
+.header__search_btn{
+    width: 3.5rem;
+    height: 3.5rem;
+    background:none;
+    background-image: url('../../image/svg/search.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 2%;
 }

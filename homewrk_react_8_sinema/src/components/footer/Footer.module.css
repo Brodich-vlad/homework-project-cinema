@@ -16,7 +16,7 @@
     font-weight: 400;
     color: rgb(245, 76, 76);
     transform: rotate(10deg) translateY(.5rem);
-    margin: .5rem;
+    margin-right: .5rem;
 }
 .footer__date{
     font-size: 1.6rem;

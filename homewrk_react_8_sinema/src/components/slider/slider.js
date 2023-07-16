@@ -2,16 +2,17 @@ import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './slider.css';
 import star from '../../image/svg/star-filled.svg';
+import { createKey } from '../../methods/create_key';
 
 export default function Slider({dataMain}) {
 
     const createCarouselItems = (data) =>{
-        const Items = data.map(({name, info, image,  rating},i)=>{
+        const Items = data.map(({id,name, info, image,  rating, backdrop},i)=>{
             if(i < 3){
                 return(
-                    <Carousel.Item  className='carousel__item'>
+                    <Carousel.Item key={createKey(i)}  className='carousel__item'>
                     <img className="d-block w-100 carousel__item-img"
-                    src={image}
+                    src={backdrop}
                     alt={name}
                     />
 

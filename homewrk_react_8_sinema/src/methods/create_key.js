@@ -1,5 +1,5 @@
 ﻿// Функція створення ID або Key.
-export function createKey(num = 'v'){
+export function createKey(num = 'v') {
     const ABC = "AaBbCcDdEeFfGgHhIiJiKkLlMmNnJjPpQqRrSsTtUuVvWwXxYyZz";
     const NUMBERS = "0123456789";
     const LETTERS = ABC + NUMBERS;
