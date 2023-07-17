@@ -3,14 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './slider.css';
 import star from '../../image/svg/star-filled.svg';
 import { createKey } from '../../methods/create_key';
+import { randomObjects } from '../../methods/random-objects';
 
 export default function Slider({dataMain}) {
-
     const createCarouselItems = (data) =>{
         const Items = data.map(({id,name, info, image,  rating, backdrop},i)=>{
-            if(i < 3){
-                return(
-                    <Carousel.Item key={createKey(i)}  className='carousel__item'>
+            return(
+                <Carousel.Item key={createKey(i)}  className='carousel__item'>
                     <img className="d-block w-100 carousel__item-img"
                     src={backdrop}
                     alt={name}
@@ -25,17 +24,14 @@ export default function Slider({dataMain}) {
                     </div>
                     </Carousel.Caption>
                 </Carousel.Item>
-                )
-            }
-            else return null
-
+            )
         })
         return Items
     }
 
     return (
         <Carousel fade className='carousel' indicators={false} interval={5000} controls={false}>
-            {createCarouselItems(dataMain)}
+            {createCarouselItems(randomObjects(dataMain))}
         </Carousel>
     )
 }

@@ -1,5 +1,7 @@
 .footer{
    padding: 2rem;
+   background: #07151a;
+   color: #ffffff;
 }
 .footer__wrapper{
     padding: 1rem;
