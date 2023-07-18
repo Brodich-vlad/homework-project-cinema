@@ -5,11 +5,13 @@ import star from '../../image/svg/star-filled.svg';
 import { createKey } from '../../methods/create_key';
 import { randomObjects } from '../../methods/random-objects';
 
-export default function Slider({dataMain}) {
+export default function Slider({dataMain, callbackLocation}) {
     const createCarouselItems = (data) =>{
-        const Items = data.map(({id,name, info, image,  rating, backdrop},i)=>{
+        const Items = data.map(({id,name, info, image,category, rating, backdrop},i)=>{
             return(
-                <Carousel.Item key={createKey(i)}  className='carousel__item'>
+                <Carousel.Item key={createKey(i)}  onClick={()=>{
+                    callbackLocation(category,id)
+                }} className='carousel__item'>
                     <img className="d-block w-100 carousel__item-img"
                     src={backdrop}
                     alt={name}

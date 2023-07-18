@@ -18,6 +18,9 @@ export default function HomePage() {
     // Сортування масиву за рейтингом.
     const sortMainData = sortSating(mainData);
 
+
+
+
     return (
         <div className='home-page'>
             <main>

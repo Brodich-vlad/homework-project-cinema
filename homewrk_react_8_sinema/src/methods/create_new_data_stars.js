@@ -1,3 +1,5 @@
+import {createNewData} from './create_new_data';
+
 // {
 //     "adult": false,
 //     "gender": 2,
@@ -45,7 +47,7 @@
 //                 18,
 //                 28
 //             ],
-//             "id": 987895,
+//             "id": 987895, 
 //             "media_type": "movie",
 //             "original_language": "ta",
 //             "original_title": "மாவீரன்",
@@ -77,8 +79,10 @@ export const createNewDataStars = (data) => {
             id: id,
             name: name,
             image: profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` :  `https://image.tmdb.org/t/p/w500${known_for[0].backdrop_path}`,
-            known_for: known_for,
-            rating: popularity.toFixed(1)
+            // known_for: known_for,createNewData
+            known_for:createNewData(known_for),
+            rating: popularity.toFixed(1),
+            category:'actors',
         }
     })
 }
