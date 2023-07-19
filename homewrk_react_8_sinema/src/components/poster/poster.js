@@ -4,7 +4,7 @@ import { currentTime } from '../../methods/current_time';
 
 
 
-export function Poster({dataArr,callbackLocation}){
+export function Poster({dataArr, callbackLocation}){
 
     // Створює строку досягнень.
     const createKnown = (data) =>{
@@ -37,7 +37,7 @@ export function Poster({dataArr,callbackLocation}){
         const Items = data.map(({id, name, image, date, known_for, category, price},i)=>{
             return(
                 <li className={classes.item}  key={createKey(i)} onClick={()=>{
-                    callbackLocation(category,id)
+                    callbackLocation(id)
                 }} >
                     <img className={classes.item_img}  src={image}
                     alt={name}/>

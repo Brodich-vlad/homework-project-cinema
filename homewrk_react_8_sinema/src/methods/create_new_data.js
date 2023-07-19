@@ -42,54 +42,10 @@ export function createNewData(data){
             name: title || name, 
             info: overview,
             price:randomSchedule(vote_average),
-            // price: [
-                // {
-                //     date: "night",
-                //     price: 60,
-                // },
-                // {
-                //     date: "day",
-                //     price: 90,
-                // },
-                // {
-                //     date: "morning",
-                //     price: 70,
-                // },
-                // {
-                //     date: "evening",
-                //     price: 1200,
-                // },
-                // {
-                //     date: "premiere",
-                //     price: 170,
-                // },
-            //     {
-            //         date: "23:00",
-            //         price: 60,
-            //     },
-            //     {
-            //         date: "12:30",
-            //         price: 90,
-            //     },
-            //     {
-            //         date: "9:45",
-            //         price: 70,
-            //     },
-            //     {
-            //         date: "20:15",
-            //         price: 120,
-            //     },
-            //     {
-            //         date: "10:00",
-            //         price: 170,
-            //         premiere: "Premiere",
-            //     },
-            // ], 
             image: poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}`: null ,
             backdrop: backdrop_path ? `https://image.tmdb.org/t/p/w500${backdrop_path}`: null,
             rating: vote_average.toFixed(1), 
             date: release_date || first_air_date,
-            category:'discover',
         }
     })
     return newData

@@ -82,7 +82,6 @@ export const createNewDataStars = (data) => {
             // known_for: known_for,createNewData
             known_for:createNewData(known_for),
             rating: popularity.toFixed(1),
-            category:'actors',
         }
     })
 }

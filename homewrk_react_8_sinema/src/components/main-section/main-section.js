@@ -5,8 +5,8 @@ import './main-section.css';
 export default function MainSection({data}) {
 
     let navigate = useNavigate();
-    const location = (category,id) =>{
-        navigate(`details/${category}_${id}`);
+    const location = (id) =>{
+        navigate(`details/${id}`);
     }
     return (
         <section className='main-section'>

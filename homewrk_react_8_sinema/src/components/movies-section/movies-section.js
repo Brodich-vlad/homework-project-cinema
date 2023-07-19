@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 export default function MoviesSection({maiData}){
 
     let navigate = useNavigate();
-    const location = (category,id) =>{
-        navigate(`details/${category}_${id}`);
+    const location = (id) =>{
+        navigate(`details/${id}`);
     }
     return(
         <section className={classes.movies_section}>

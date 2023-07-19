@@ -1,26 +1,33 @@
 .details_page{
-    /* max-width: 144rem;
-    min-height: 100vh; */
     min-height: 80vh;
-    /* margin: 0 auto; */
     background: #050E12;
     color: #ffffff;
 }
-.details_item{
-    width: 99.9%;
-    min-height: 90vh;
-    background-color: antiquewhite;
-    margin: 0 auto;
-    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.4)); */
-    /* background-image: url(); */
-    /* filter: brightness(.3); */
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position-x: center;
-    /* background-size: contain; */
+.details_btn_back{
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 600;
+    border: 1px solid white;
+    border-radius: .4rem;
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    opacity: .8;
+    transition: all .3s;
+    z-index: 2;
 }
+.details_btn_back:focus,
+.details_btn_back:hover{
+    text-decoration: none;
+    color: white;
+    transform: translateX(-.5rem);
+    opacity: 1;
+}
+
 .details{
-    padding: 2rem 4%;
+    padding: 4rem 4%;
 }
 .details_wrapper{
     display: flex;
@@ -30,8 +37,9 @@
 }
 .details_img_wrapper{
     width: 20%;
+    min-width: 25rem;
 }
-.details_img_wrapper img {
+.details_img_wrapper > img {
     display: block;
     width: 100%;
 
@@ -40,6 +48,9 @@
     object-fit:cover;
     object-position: 70% 0;
     border-radius: .3rem;
+
+    border: 1px solid rgba(179, 178, 178, 0.333);
+    box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.12), 0px 1px 1px rgba(255, 255, 255, 0.14), 0px 2px 1px rgba(255, 255, 255, 0.2);
 }
 .details_info{
     width: 60%;
@@ -50,11 +61,11 @@
     font-size: 3.6rem;
 }
 .info_title{
-    font-size: 2.8rem;
+    font-size: 2.3rem;
 }
 .info_text{
     width: 80%;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.1;
 }
 .info_rating{
@@ -67,6 +78,16 @@
     width: 3rem;
     margin-right: .5rem;
 }
+
+.details_schedule{}
+
+.details_schedule_title{
+    font-size: 2rem;
+}
+.details_schedule_btn_wrapp{
+    margin: .5rem;
+}
+
 .info_price_btn{
     border: 1px solid white;
     border-radius: .3rem;

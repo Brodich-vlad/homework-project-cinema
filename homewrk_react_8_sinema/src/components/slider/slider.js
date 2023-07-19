@@ -10,7 +10,7 @@ export default function Slider({dataMain, callbackLocation}) {
         const Items = data.map(({id,name, info, image,category, rating, backdrop},i)=>{
             return(
                 <Carousel.Item key={createKey(i)}  onClick={()=>{
-                    callbackLocation(category,id)
+                    callbackLocation(id)
                 }} className='carousel__item'>
                     <img className="d-block w-100 carousel__item-img"
                     src={backdrop}
