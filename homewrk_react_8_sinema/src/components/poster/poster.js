@@ -19,7 +19,7 @@ export function Poster({dataArr, callbackLocation}){
     const sessionTime = (data) =>{
         const arr = []
         data.forEach(({time, price, premiere},i)=>{
-            if(currentTime() < time-.7){
+            if(currentTime() > time-.7){
                 arr.push( <li key={createKey(i)}>{premiere ?<><span>{time} : 00</span><span>Premiere</span></> : <span>{time} : 00</span>}</li>)
             }
             else return

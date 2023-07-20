@@ -5,17 +5,27 @@ import { currentTime } from '../../methods/current_time';
 import { createKey } from '../../methods/create_key';
 import star from '../../image/svg/star-filled.svg';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router'; 
+
 
 export default function DetailsPage({dataFilms}){
-    const date = new Date()
-    console.log(date)
+    // const date = new Date()
+    // console.log(date)
     // Отримання id сторінки.
     const { id } = useParams();
     // Знаходимо обект з відповідним id.
     const searchObject = (id, data) => {
         return  [...data].find(e => e.id === id*1)
     }
+    // tiket
+    let navigate = useNavigate();
 
+    // console.log(navigate)
+    const location = () => {
+    //    return <Navigate to={'tiket'}/>
+        navigate('tiket');
+
+    }
  
     // Виводимо інформацію на сторінку.
     const showPageFilm = (id, data) =>{
@@ -53,9 +63,11 @@ export default function DetailsPage({dataFilms}){
                            
                         </ul>
                         
-
-                      <button className={classes.info_submit_btn} type='button'>Choose a place</button>
                        
+
+                            <button className={classes.info_submit_btn} type='button' onClick={()=>{location()}}>Choose a place</button>
+
+                     
                     </div>     
                 </div>
                 <div>

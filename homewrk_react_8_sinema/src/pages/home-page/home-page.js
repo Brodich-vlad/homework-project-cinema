@@ -1,4 +1,4 @@
-import './home-page.css';
+import classes from './home-page.module.css';
 import MainSection from '../../components/main-section/main-section';
 import MoviesSection from '../../components/movies-section/movies-section';
 
@@ -24,12 +24,10 @@ export default function HomePage({dataFilms, dataStars}) {
 
 
     return (
-        <div className='home-page'>
-            <main>
-              <MainSection data={sortMainData}/>
-              <MoviesSection maiData={dataFilms}/>
-              <PopularStarsSection dataMain={dataStars}/>
-            </main>
-        </div>
+        <main  className={classes.home_page}>
+            <MainSection data={sortMainData}/>
+            <MoviesSection maiData={dataFilms}/>
+            <PopularStarsSection dataMain={dataStars}/>
+        </main>
     )
 }

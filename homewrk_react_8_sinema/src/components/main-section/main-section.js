@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './main-section.css';
 
 export default function MainSection({data}) {
-
+    // tiket
     let navigate = useNavigate();
     const location = (id) =>{
         navigate(`details/${id}`);

@@ -43,7 +43,7 @@ export function createNewData(data){
             info: overview,
             price:randomSchedule(vote_average),
             image: poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}`: null ,
-            backdrop: backdrop_path ? `https://image.tmdb.org/t/p/w500${backdrop_path}`: null,
+            backdrop: backdrop_path ? `https://image.tmdb.org/t/p/original/${backdrop_path}`: null,
             rating: vote_average.toFixed(1), 
             date: release_date || first_air_date,
         }

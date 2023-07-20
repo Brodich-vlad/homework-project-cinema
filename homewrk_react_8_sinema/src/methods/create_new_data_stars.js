@@ -78,7 +78,7 @@ export const createNewDataStars = (data) => {
         return {
             id: id,
             name: name,
-            image: profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` :  `https://image.tmdb.org/t/p/w500${known_for[0].backdrop_path}`,
+            image: profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` :  `https://image.tmdb.org/t/p/w500${known_for[0].poster_path}`,
             // known_for: known_for,createNewData
             known_for:createNewData(known_for),
             rating: popularity.toFixed(1),
