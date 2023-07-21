@@ -2,8 +2,13 @@ import classes from './modal_star.module.css';
 import { createKey } from '../../methods/create_key';
 import star from '../../image/svg/star-filled.svg';
 
-export default function ModalStar({ idStar, dataStars, clickModal }) {
-    
+import { useContext  } from 'react';
+import { Context } from '../сontext';
+
+export default function ModalStar({ idStar, clickModal }) {
+     // Отримуємо контекст.
+     const { stars } = useContext(Context);
+
     const searchObject = (id, data) => {
         return  [...data].find(e => e.id === id*1)
     }
@@ -63,8 +68,8 @@ export default function ModalStar({ idStar, dataStars, clickModal }) {
         <div className={classes.modal} onClick={() => {
             clickModal()
         }}>
-
-            {showInfoStar(idStar, dataStars)}
+            {showInfoStar(idStar, stars)}
+            
             <div  className={classes.modal_close_btn} >&#215;</div>
         </div>
     )

@@ -6,7 +6,7 @@ import seat_red from '../../image/svg/ticket-swg/seat-red.svg';
 import seat_green from '../../image/svg/ticket-swg/seat-green.svg';
 
 export default function TiketPage() {
-    
+      // Обект зали нумерація місць..
     const createObjSeats = () =>{
         const newArr = [];
         let cayntY = 0;
@@ -31,6 +31,7 @@ export default function TiketPage() {
         return newArr
     }
 
+    // Функція виводить глядацьку залу з місцями.
     const createCinemaHall = (data) =>{
         const newArr = [[],[],[],[],[],[]];
         data.forEach((el,i) => {
@@ -41,9 +42,9 @@ export default function TiketPage() {
                     :
                 el.id === 10
                     ? 
-                 classes.seat_centr_2 
+                classes.seat_centr_2 
                     :
-                 classes.seat} key={i*10}
+                classes.seat} key={i*10}
                  onClick={()=>{
                     console.log(el)
                  }}
@@ -67,15 +68,22 @@ export default function TiketPage() {
 
     return (
         <main className={classes.tiket_page}>
-            <h2 className={classes.tiket_page_title}>Choose a place</h2>
-            <div className={classes.cinema_hall_section}>
+
+
+                <h2 className={classes.tiket_page_title}>Choose a place</h2>
+
+            <div className={classes.tiket_page_wrapper}>
+
+                <div className={classes.cinema_hall_section}>
                 <img  className={classes.cinema_hall_screen} src={screen} alt='screen'/>
 
                 <ul  className={classes.cinema_hall_lines}>
                     {createCinemaHall(createObjSeats())}
                 </ul>
+                </div>
+
+                <div className={classes.tiket_page_info}>info user date tikt</div>
             </div>
-       
         </main>
     )
 }

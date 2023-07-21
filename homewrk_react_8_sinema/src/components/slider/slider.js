@@ -5,9 +5,17 @@ import star from '../../image/svg/star-filled.svg';
 import { createKey } from '../../methods/create_key';
 import { randomObjects } from '../../methods/random-objects';
 
-export default function Slider({dataMain, callbackLocation}) {
+
+import { useContext } from 'react';
+import { Context } from '../сontext';
+
+export default function Slider({ callbackLocation }) {
+
+    // Отримуємо контекст.
+    const {sliderData} = useContext(Context);
+
     const createCarouselItems = (data) =>{
-        const Items = data.map(({id,name, info, image,category, rating, backdrop},i)=>{
+        const Items = data.map(({id, name, info, rating, backdrop},i)=>{
             return(
                 <Carousel.Item key={createKey(i)}  onClick={()=>{
                     callbackLocation(id)
@@ -33,7 +41,7 @@ export default function Slider({dataMain, callbackLocation}) {
 
     return (
         <Carousel fade className='carousel' indicators={false} interval={5000} controls={false}>
-            {createCarouselItems(randomObjects(dataMain))}
+            {createCarouselItems(randomObjects(sliderData))}
         </Carousel>
     )
 }

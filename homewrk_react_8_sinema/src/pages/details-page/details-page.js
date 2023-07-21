@@ -6,9 +6,14 @@ import { createKey } from '../../methods/create_key';
 import star from '../../image/svg/star-filled.svg';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router'; 
+import { useContext } from 'react';
+import { Context } from '../../components/сontext';
 
+export default function DetailsPage(){
 
-export default function DetailsPage({dataFilms}){
+      // Отримуємо контекст.
+      const {films} = useContext(Context);
+
     // const date = new Date()
     // console.log(date)
     // Отримання id сторінки.
@@ -81,7 +86,7 @@ export default function DetailsPage({dataFilms}){
 
     return(
         <main className={classes.details_page} >
-            { showPageFilm (id, dataFilms)}
+            { showPageFilm (id, films)}
         </main>
     )
 }

@@ -5,6 +5,8 @@
     margin: 0 auto;
     background: #05161d;
     background-color: #050e12a8;
+
+   
     color: #ffffff;
 }
 
@@ -14,9 +16,20 @@
     padding: 2rem 5%;
 
 }
+.tiket_page_wrapper{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
 .cinema_hall_section{
-    width: 90%;
-    margin: 1rem auto;
+    width: 50%;
+    min-width: 54rem;
+    /* margin: 1rem auto; */
+    margin: 1%;
     padding: 2%;
     border-radius: .6rem;
     background-color: rgb(11, 36, 36);
@@ -47,7 +60,7 @@
 
 .seat_img{
     display: block;
-    width: 6rem;
+    width: 5rem;
     cursor: pointer;
     transition: all .3s;
 }
@@ -55,6 +68,8 @@
     transform: translateY(-.3rem);
 
 }
+
+
 .seat{
     margin: 1%;
 }
@@ -63,4 +78,14 @@
 }
 .seat_centr_2{
     margin-right: 6%;
+}
+
+.tiket_page_info{
+    width: 40%;
+    background-color: #05161d;
+    height: 30rem;
+
+    margin: 1%;
+    padding: 2%;
+    border-radius: .6rem;
 }

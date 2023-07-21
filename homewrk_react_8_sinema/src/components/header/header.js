@@ -3,7 +3,7 @@ import './header.css';
 export default function Header() {
     // Якщо не головна сторінка приховати поле пошуку.
     // const location = document.location.pathname;
-
+   
     return (
         <header className='header'>
             <div className='header__wrapper'>

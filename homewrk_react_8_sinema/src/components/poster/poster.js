@@ -1,12 +1,9 @@
 import classes from './poster.module.css';
 import { createKey } from '../../methods/create_key';
-import { currentTime } from '../../methods/current_time';
 
+export function Poster({dataArr, callbackLocation, callbackLocationTiket, time, callbackTime}){
 
-
-export function Poster({dataArr, callbackLocation}){
-
-    // Створює строку досягнень.
+    // Створює строку досягнень для карточки актор.
     const createKnown = (data) =>{
         const str =[]
         data.forEach(({name})=>{
@@ -15,47 +12,60 @@ export function Poster({dataArr, callbackLocation}){
         return str.join(', ')
     }
 
-    // час сьгоднішніх сеансів.
-    const sessionTime = (data) =>{
+    // Час сеансів.
+    const sessionTime = (data,id) =>{
         const arr = []
-        data.forEach(({time, price, premiere},i)=>{
-            if(currentTime() > time-.7){
-                arr.push( <li key={createKey(i)}>{premiere ?<><span>{time} : 00</span><span>Premiere</span></> : <span>{time} : 00</span>}</li>)
-            }
-            else return
-            // return(
-            //     currentTime() < time-.7 ? <li>{`${time} : 00`}</li>:null
-            // )
+        data.forEach(({time, premiere},i)=>{
+          
+            arr.push( <li  className={classes.schedule_list_btn} key={createKey(i)}  
+            onClick={()=>{
+                callbackTime(time)
+            }}
+            >{premiere 
+                ?
+            <><span>{time} : 00</span><span>Premiere</span></>
+                : 
+            <span>{time} : 00</span>}</li>)
+           
         })
-        const elem = arr.length !== 0 ? <><h3 className={classes.schedule_title}>Schedule for today</h3> <ul className={classes.schedule_list}>{arr}</ul><h3 className={classes.schedule_title}>More about the schedule</h3></>: <h3 className={classes.schedule_title}>View the schedule for another day</h3>
+
+        const elem = <>
+            <h3 className={classes.schedule_title}>Schedule</h3> 
+            <ul className={classes.schedule_list}>{arr}</ul>
+
+            <button disabled={time ? false : true} className={classes.schedule_btn} type='button'
+            onClick={()=>{
+                callbackLocationTiket(id)
+            }}
+            >Choose place</button>
+        </>
 
         return elem
     }
 
 
     const createItems = (data) =>{
-        const Items = data.map(({id, name, image, date, known_for, category, price},i)=>{
+        const Items = data.map(({id, name, image, date, known_for, price},i)=>{
             return(
-                <li className={classes.item}  key={createKey(i)} onClick={()=>{
-                    callbackLocation(id)
-                }} >
-                    <img className={classes.item_img}  src={image}
-                    alt={name}/>
-                    <div className={classes.item_info}>
+                <li className={classes.item}  key={createKey(i)}>
+                    <div className={classes.item_wrapper} 
+                        onClick={(ev)=>{
+                        ev.stopPropagation()
+                        callbackLocation(id)}}
+                    >
+                        <img className={classes.item_img}  src={image}
+                        alt={name}/>
+                        <div className={classes.item_info}>
                         <h3 className={classes.item_info_title} >{name}</h3>
-
-                        {price && <div className={classes.schedule}>
-                            {sessionTime(price)}
-                            {/* {price.map(({time, price, premiere})=>{
-                                return(
-                                    <li>{`${time} : 00`}</li>
-                                )
-                            })} */}
-                        </div>}
 
                         {date && <p className={classes.item_info_date} >{date}</p>}
                         {known_for && <p className={classes.item_info_known} >{createKnown(known_for)}</p>}
+                        </div>
                     </div>
+
+                    {price && <div className={classes.schedule}>
+                            {sessionTime(price,id)}
+                    </div>}
                 </li>
             )
         })
