@@ -1,7 +1,7 @@
 import classes from './poster.module.css';
 import { createKey } from '../../methods/create_key';
 
-export function Poster({dataArr, callbackLocation, callbackLocationTiket, time, callbackTime}){
+export function Poster({dataArr, callbackLocation, callbackTime}){
 
     // Створює строку досягнень для карточки актор.
     const createKnown = (data) =>{
@@ -18,8 +18,9 @@ export function Poster({dataArr, callbackLocation, callbackLocationTiket, time, 
         data.forEach(({time, premiere},i)=>{
           
             arr.push( <li  className={classes.schedule_list_btn} key={createKey(i)}  
-            onClick={()=>{
-                callbackTime(time)
+                onClick={(ev) => {
+                ev.stopPropagation()
+                callbackTime(time,id)
             }}
             >{premiere 
                 ?
@@ -33,11 +34,12 @@ export function Poster({dataArr, callbackLocation, callbackLocationTiket, time, 
             <h3 className={classes.schedule_title}>Schedule</h3> 
             <ul className={classes.schedule_list}>{arr}</ul>
 
-            <button disabled={time ? false : true} className={classes.schedule_btn} type='button'
-            onClick={()=>{
+            {/* <button disabled={time ? false : true} className={classes.schedule_btn} type='button'
+                onClick={(ev) => {
+                ev.stopPropagation()
                 callbackLocationTiket(id)
             }}
-            >Choose place</button>
+            >Choose place</button> */}
         </>
 
         return elem

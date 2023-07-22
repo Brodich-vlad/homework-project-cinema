@@ -80,6 +80,9 @@
     overflow: hidden;
     transition: all 1s;
 }
+
+
+
 .schedule:hover{
     max-height: 30rem;
     max-width: 80rem;

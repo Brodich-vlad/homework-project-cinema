@@ -12,7 +12,7 @@ import { Context } from '../сontext';
 export default function Slider({ callbackLocation }) {
 
     // Отримуємо контекст.
-    const {sliderData} = useContext(Context);
+    const { films } = useContext(Context);
 
     const createCarouselItems = (data) =>{
         const Items = data.map(({id, name, info, rating, backdrop},i)=>{
@@ -40,8 +40,10 @@ export default function Slider({ callbackLocation }) {
     }
 
     return (
+        <>{ films &&
         <Carousel fade className='carousel' indicators={false} interval={5000} controls={false}>
-            {createCarouselItems(randomObjects(sliderData))}
-        </Carousel>
+            {createCarouselItems(randomObjects(films))}
+            </Carousel>}
+        </>    
     )
 }

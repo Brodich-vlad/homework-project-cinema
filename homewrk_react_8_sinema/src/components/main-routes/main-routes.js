@@ -6,7 +6,10 @@ import HomePage from "../../pages/home-page/home-page";
 import DetailsPage from "../../pages/details-page/details-page";
 import TiketPage from "../../pages/tiket-page/tiket-page";
 
-export default function MainRoutes(){
+
+export default function MainRoutes() {
+ 
+
 
     return(
         <>

@@ -15,18 +15,21 @@ export default function MoviesSection(){
     const location = (id) =>{
         navigate(`details/${id}`);
     }
-    const callbackTime = (time) =>{
+    const callbackTime = (time,id) =>{
         setTimeSession(time)
-    }
-    const locationTiket = (id) =>{
         navigate(`details/${id}/tiket`);
     }
+    // const locationTiket = (id) =>{
+    //     navigate(`details/${id}/tiket`);
+    // }
+
+ 
 
     return(
         <section className={classes.movies_section}>
             <h2 className={classes.movies_section__title}>Movies</h2>
             <ul className={classes.movies_section__list}>
-                {<Poster dataArr={ films } callbackLocation={location} callbackLocationTiket={locationTiket} time={timeSession} callbackTime={callbackTime}/>}
+                {films && <Poster dataArr={ films } callbackLocation={location}  callbackTime={callbackTime}/>}
             </ul>
         </section>
     )

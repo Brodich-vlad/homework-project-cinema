@@ -30,7 +30,7 @@ export default function PopularStarsSection(){
         <section className={classes.stars_section}>
             <h2 className={classes.stars_section__title}>Popular Stars</h2>
             <ul className={classes.stars_section__list}>
-                {<Poster dataArr={ stars } callbackLocation={showModal}/>}
+                {stars && <Poster dataArr={ stars } callbackLocation={showModal}/>}
             </ul>
            {openModal && <ModalStar clickModal={closeModal} idStar={infoModal}/>}
         </section>

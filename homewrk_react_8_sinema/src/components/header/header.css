@@ -1,7 +1,14 @@
 .header{
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
     background: #1A1F38;
     color: white;
     padding: .6rem;
+
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 .header__wrapper{
     width: 90%;
