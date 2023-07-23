@@ -11,30 +11,42 @@ import { createNewDataStars } from '../../methods/create_new_data_stars';
 import { dataDiscover } from '../../datas/data-discover';
 import { dataPopularStars } from '../../datas/data-popular-stars';
 
-import { Context } from '../../components/сontext';
+import { Context, visits } from '../../components/сontext';
 
 
 export default function LayoutPage() {
     
-    const [filmsSearch, setFilmsSearch] = useState(null);
+    const [search, setSearch] = useState('');
 
     const [filmsData, setFilmsData] = useState(null);
     
     const [starsData, setStarsData] = useState(null);
 
+    const[visitsInfo, setVisitsInfo] = useState(visits)
+
     // Тут треба зробити запит на сервер.
     useEffect(() => {
         setFilmsData(createNewData(dataDiscover))
-
-        setFilmsSearch(createNewData(dataDiscover))
-
         setStarsData(createNewDataStars(dataPopularStars))
-    },[])
+    }, [])
+
+    // Функція зміни стану пошуку.
+    const callbackSetSearchInput = (str) => {
+        setSearch(str)
+    }
+
+    // Функція зміни стану замовлень.
+    const callbackSetVisitsInfo = (newVisit) =>{
+        // setVisitsInfo(...visitsInfo, newVisit)
+        setVisitsInfo(newVisit)
+    }
+
+
     return(
         <>
             <div className={classes.layout_page}>
 
-                <Context.Provider value={{ films:filmsData, stars:starsData, filmsSearch:filmsSearch}}>
+                <Context.Provider value={{ films:filmsData, stars:starsData,search:search,visitsInfo:visitsInfo, callbackSetSearchInput, callbackSetVisitsInfo}}>
                     <Header/>
                     <>
                         <Outlet/>

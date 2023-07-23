@@ -79,7 +79,7 @@
     margin-right: .5rem;
 }
 
-.details_schedule{}
+
 
 .details_schedule_title{
     font-size: 2rem;
@@ -94,12 +94,39 @@
     background: none;
     color: white;
     font-size: 1.6rem;
+    opacity: .8;
+    transition: all .3s;
 
 }
-.info_submit_btn{
+.info_price_btn:focus,
+.info_price_btn:hover{
+    opacity: 1;
+}
+
+
+
+
+.schedule_btn{
     border: 1px solid white;
     border-radius: .3rem;
     background: none;
     color: white;
     font-size: 2rem;
+    padding: .5rem .8rem;
+    opacity: .7;
+    transition: all .3s;
 }
+
+.schedule_btn:disabled{
+    opacity: .3;
+    cursor: default;
+}
+.schedule_btn:not([disabled]):focus,
+.schedule_btn:not([disabled]):hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+
+

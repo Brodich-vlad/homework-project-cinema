@@ -24,18 +24,13 @@
     position: relative;
 }
 .item:hover{
-    /* text-decoration: none;
-    color: white; */
     box-shadow: 3px 4px 7px rgba(255, 255, 255, 0.24), 0px 1px 1px rgba(255, 255, 255, 0.30), 0px 2px 1px rgba(255, 255, 255, 0.4);
     transform: translateY(-.2rem)translateX(-.2rem);
-
 }
-.item_wrapper{}
 
 .item_img{
     display: block;
     width: 100%;
-
     height: 100%;
     min-height: 30rem;
     object-fit:cover;

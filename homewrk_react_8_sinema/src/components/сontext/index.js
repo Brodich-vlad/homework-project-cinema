@@ -1,11 +1,23 @@
 import { createContext } from "react"
 
-export const contecst = {
-    name:'test',
-    test:true,
-}
+// export const contecst =  { films:filmsData, stars:starsData,search:search}
+export const visits = [
+    {
+        filmId:'',
+        time:'',
+        price:0,
+        numPlaces:[],
+        premiere:false,
+        date:''
+    }
+]
+
 
 export const Context = createContext({
-    cotecst:contecst,
+    films: [],
+    stars: [],
+    search: '',
+    visits:visits,
     setFunction: ()=>{},
+    // setFunc: ()=>{},
 })

@@ -19,6 +19,7 @@
 .tiket_page_wrapper{
     background-color: aqua;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -26,8 +27,8 @@
 
 
 .cinema_hall_section{
-    width: 50%;
-    min-width: 54rem;
+    width: 90%;
+    min-width: 70rem;
     /* margin: 1rem auto; */
     margin: 1%;
     padding: 2%;
@@ -37,8 +38,8 @@
 
 .cinema_hall_screen{
     display: block;
-    width: 60%;
-    margin: 1% auto 5% auto;
+    width: 80%;
+    margin: 1% auto 8% auto;
 }
 
 .cinema_hall_lines{
@@ -50,7 +51,10 @@
     margin-bottom: 1%;
 }
 .hall_line_wrapper:nth-child(2){
-    margin-bottom: 3%;
+    margin-bottom: 4%;
+}
+.hall_line_wrapper:nth-child(5){
+    margin-bottom: 4%;
 }
 .hall_line_seats{
     display: flex;
@@ -78,6 +82,29 @@
 }
 .seat_centr_2{
     margin-right: 6%;
+}
+.tiket_page_list{
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: center;
+    align-items: center;
+    margin: .5rem;
+}
+.tiket_page_list_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem;
+}
+.tiket_page_list_item p{
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: .6rem;
+}
+.tiket_page_list_item > img{
+    display: block;
+    width: 2rem;
+   
 }
 
 .tiket_page_info{
