@@ -1,7 +1,7 @@
 import { createContext } from "react"
 
 // export const contecst =  { films:filmsData, stars:starsData,search:search}
-export const visits = [
+export const visits = 
     {
         filmId:'',
         time:'',
@@ -10,7 +10,7 @@ export const visits = [
         premiere:false,
         date:''
     }
-]
+
 
 
 export const Context = createContext({
@@ -19,5 +19,4 @@ export const Context = createContext({
     search: '',
     visits:visits,
     setFunction: ()=>{},
-    // setFunc: ()=>{},
 })

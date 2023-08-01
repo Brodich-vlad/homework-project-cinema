@@ -6,10 +6,12 @@ import classes from './layout-page.module.css';
 import { useState , useEffect} from "react";
 import { createNewData } from '../../methods/create_new_data';
 import { createNewDataStars } from '../../methods/create_new_data_stars';
+import { options } from '../../methods/options';
+
 
 // !! Тимчасові данні до отримання данни з сервера.!!
-import { dataDiscover } from '../../datas/data-discover';
-import { dataPopularStars } from '../../datas/data-popular-stars';
+// import { dataDiscover } from '../../datas/data-discover';
+// import { dataPopularStars } from '../../datas/data-popular-stars';
 
 import { Context, visits } from '../../components/сontext';
 
@@ -26,8 +28,23 @@ export default function LayoutPage() {
 
     // Тут треба зробити запит на сервер.
     useEffect(() => {
-        setFilmsData(createNewData(dataDiscover))
-        setStarsData(createNewDataStars(dataPopularStars))
+        // Запит фільми.
+        fetch('https://api.themoviedb.org/3/discover/movie', options)
+        .then(response => response.json())
+        .then(response => setFilmsData(createNewData(response.results)))
+        .catch(err => console.error(err)); 
+
+        // Запит зірки.
+        fetch('https://api.themoviedb.org/3/person/popular', options)
+        .then(response => response.json())
+        .then(response => setStarsData(createNewDataStars(response.results)))
+        .catch(err => console.error(err));
+
+
+
+
+        // setFilmsData(createNewData(dataDiscover))
+        // setStarsData(createNewDataStars(dataPopularStars))
     }, [])
 
     // Функція зміни стану пошуку.
@@ -37,7 +54,6 @@ export default function LayoutPage() {
 
     // Функція зміни стану замовлень.
     const callbackSetVisitsInfo = (newVisit) =>{
-        // setVisitsInfo(...visitsInfo, newVisit)
         setVisitsInfo(newVisit)
     }
 
@@ -49,7 +65,7 @@ export default function LayoutPage() {
                 <Context.Provider value={{ films:filmsData, stars:starsData,search:search,visitsInfo:visitsInfo, callbackSetSearchInput, callbackSetVisitsInfo}}>
                     <Header/>
                     <>
-                        <Outlet/>
+                       {filmsData && <Outlet/>}
                     </>
                     <Footer/>
                 </Context.Provider>
